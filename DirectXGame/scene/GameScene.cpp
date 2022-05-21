@@ -4,10 +4,7 @@
 
 GameScene::GameScene() {}
 
-GameScene::~GameScene() {
-
-	delete model_;
-}
+GameScene::~GameScene() {}
 
 void GameScene::Initialize() {
 
@@ -15,10 +12,6 @@ void GameScene::Initialize() {
 	input_ = Input::GetInstance();
 	audio_ = Audio::GetInstance();
 	debugText_ = DebugText::GetInstance();
-	textureHandle_ = TextureManager::Load("mario.jpg");
-	model_ = Model::Create();
-	worldTransform_.Initialize();
-	viewProjection_.Initialize();
 }
 
 void GameScene::Update() {}
@@ -48,8 +41,6 @@ void GameScene::Draw() {
 
 	/// <summary>
 	/// ここに3Dオブジェクトの描画処理を追加できる
-	model_->Draw(worldTransform_,viewProjection_);
-
 	/// </summary>
 
 	// 3Dオブジェクト描画後処理
